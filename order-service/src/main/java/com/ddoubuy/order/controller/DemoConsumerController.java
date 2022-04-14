@@ -1,12 +1,10 @@
 package com.ddoubuy.order.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.ddoubuy.order.consumer.DemoRpcClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.Resource;
 
 /**
  * @description:
@@ -15,12 +13,12 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/consumer/")
-@CrossOrigin
 public class DemoConsumerController {
-    @Resource
-    RestTemplate restTemplate;
+    @Autowired
+    private DemoRpcClient demoRpcClient;
+
     @GetMapping("/get")
     public Object get() {
-        return restTemplate.getForObject("http://user-service" + "/user/provider/get", Object.class);
+        return demoRpcClient.getById(1);
     }
 }
