@@ -20,14 +20,15 @@
         <spring-cloud.version>2021.0.1</spring-cloud.version>
         <spring-boot.version>2.6.4</spring-boot.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-        <lombok.version>1.16.18</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
+        <ddoubuy-common-version>1.0-SNAPSHOT</ddoubuy-common-version>
     </properties>
     <modules>
         <module>common</module>
         <module>gateway</module>
         <module>idgen-service</module>
         <module>user-service</module>
-        <module>cms-service</module>
+        <module>product-service</module>
         <module>cart-service</module>
         <module>order-service</module>
     </modules>
@@ -39,7 +40,6 @@
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -59,7 +59,8 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
-                <optional>true</optional>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
