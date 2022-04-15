@@ -22,6 +22,11 @@
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <lombok.version>1.18.22</lombok.version>
         <ddoubuy-common-version>1.0-SNAPSHOT</ddoubuy-common-version>
+        <mybatis.version>2.1.4</mybatis.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+        <ali-druid-version>1.2.5</ali-druid-version>
+        <baomidu-version>3.4.2</baomidu-version>
     </properties>
     <modules>
         <module>common</module>
@@ -56,9 +61,46 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${ali-druid-version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${baomidu-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-core</artifactId>
+                <version>${baomidu-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

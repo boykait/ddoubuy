@@ -18,7 +18,7 @@ public class Pagination {
     private long pages;
     private long total;
 
-    public static Pagination getInstance(long page, long size, long pages, long total) {
+    public static Pagination create(long page, long size, long pages, long total) {
         return new Pagination(page, size, pages, total);
     }
 }

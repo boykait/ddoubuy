@@ -1,9 +1,12 @@
 package com.ddoubuy.common.model;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 import static com.ddoubuy.common.constants.CodeDefinition.FAIL;
 import static com.ddoubuy.common.constants.CodeDefinition.SUCCESS;
@@ -28,6 +31,9 @@ public class Result<T> {
 
     public static <T> Result<T> success(T data, Pagination pagination) {
         return create(SUCCESS, data, pagination, null);
+    }
+    public static <T> Result<List<T>> success(IPage<T> page) {
+        return create(SUCCESS, page.getRecords(), Pagination.create(page.getCurrent(), page.getSize(), page.getPages(), page.getTotal()), null);
     }
 
     public static <T> Result<T> success(T data, Pagination pagination, String msg) {
