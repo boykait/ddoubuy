@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description:
@@ -14,7 +15,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @ConfigurationProperties
 @SpringBootApplication
 @EnableFeignClients
-@MapperScan("com.ddoubuy.user.dao")
+@ComponentScan(basePackages = "com.ddoubuy")
+@MapperScan("com.ddoubuy.user.orm.mybatis")
 public class UserApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);
