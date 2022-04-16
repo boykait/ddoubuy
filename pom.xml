@@ -27,6 +27,7 @@
         <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
         <ali-druid-version>1.2.5</ali-druid-version>
         <baomidu-version>3.4.2</baomidu-version>
+        <knife4j.version>3.0.3</knife4j.version>
     </properties>
     <modules>
         <module>common</module>
@@ -105,6 +106,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.github.xiaoymin</groupId>-->
+<!--                <artifactId>knife4j-spring-boot-starter</artifactId>-->
+<!--                <version>${knife4j.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 </project>
