@@ -1,32 +1,24 @@
-package com.ddoubuy.product.orm.mybatis.po;
+package com.ddoubuy.cart.model.vo.product;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
+import com.ddoubuy.common.model.Basic;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.ddoubuy.common.model.Basic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
- * <p>
- *  商品PO对象
- * </p>
- *
- * @author boykaff
- * @since 2022-04-17
+ * @description: 商品VO对象
+ * @author: boykaff
+ * @date: 2022-04-17-0017
  */
-@Data
+@ApiModel(value = "ProductVO对象", description = "ProductVO对象")
 @EqualsAndHashCode(callSuper = true)
-@TableName("pms_product")
-@ApiModel(value = "Product对象", description = "")
-public class Product extends Basic implements Serializable {
+@Data
+public class ProductVO extends Basic implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("商品名称")

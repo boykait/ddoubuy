@@ -1,4 +1,4 @@
-package com.ddoubuy.cart.orm.mybatis.po;
+package com.ddoubuy.cart.model.vo.cart;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ddoubuy.common.model.Basic;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author boykaff
@@ -20,9 +20,8 @@ import java.math.BigDecimal;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("cms_cart")
 @ApiModel(value = "Cart对象", description = "")
-public class Cart extends Basic implements Serializable {
+public class CartVO extends Basic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

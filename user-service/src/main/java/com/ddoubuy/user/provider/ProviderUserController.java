@@ -1,7 +1,10 @@
 package com.ddoubuy.user.provider;
 
+import com.ddoubuy.user.orm.mybatis.po.User;
+import com.ddoubuy.user.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +25,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/provider/user")
 public class ProviderUserController {
-    @ApiOperation(value = "请求单个用户测试")
+    @Autowired
+    private IUserService userService;
+
+    @ApiOperation(value = "根据用户ID查询用户信息")
     @GetMapping("/{id}")
-    public Object getById(@PathVariable(name = "id") Integer id) {
-        Map<String, Object> obj = new HashMap<>();
-        obj.put("id", id);
-        obj.put("name", "测试账号");
-        return obj;
+    public User getUserById(@PathVariable(name = "id") Integer id) {
+        return userService.getById(id);
     }
 }

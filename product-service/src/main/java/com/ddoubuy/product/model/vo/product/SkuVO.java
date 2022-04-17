@@ -1,11 +1,4 @@
-package com.ddoubuy.product.orm.mybatis.po;
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+package com.ddoubuy.product.model.vo.product;
 
 import com.ddoubuy.common.model.Basic;
 import io.swagger.annotations.ApiModel;
@@ -13,20 +6,18 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 /**
- * <p>
- * 
- * </p>
- *
- * @author boykaff
- * @since 2022-04-17
+ * @description: SKU VO对象
+ * @author: boykaff
+ * @date: 2022-04-17-0017
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("pms_sku")
-@ApiModel(value = "Sku对象", description = "")
-public class Sku extends Basic implements Serializable {
-
+@ApiModel(value = "Sku VO对象", description = "SKU VO对象")
+public class SkuVO extends Basic implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("产品分类ID")

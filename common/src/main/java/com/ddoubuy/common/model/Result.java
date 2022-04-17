@@ -32,6 +32,10 @@ public class Result<T> {
     public static <T> Result<T> success(T data, Pagination pagination) {
         return create(SUCCESS, data, pagination, null);
     }
+    public static <T> Result<T> success(T data, String msg) {
+        return create(SUCCESS, data, null, msg);
+    }
+
     public static <T> Result<List<T>> success(IPage<T> page) {
         return create(SUCCESS, page.getRecords(), Pagination.create(page.getCurrent(), page.getSize(), page.getPages(), page.getTotal()), null);
     }

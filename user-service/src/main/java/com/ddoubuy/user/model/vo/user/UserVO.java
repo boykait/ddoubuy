@@ -1,25 +1,23 @@
-package com.ddoubuy.user.orm.mybatis.po;
+package com.ddoubuy.user.model.vo.user;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.ddoubuy.common.model.Basic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 /**
- * <p>
- *
- * </p>
+ * 用户VO对象
  *
  * @author boykaff
  * @since 2022-04-16
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("ums_user")
 @ApiModel(value = "User对象", description = "")
-public class User extends Basic implements Serializable {
+public class UserVO extends Basic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
