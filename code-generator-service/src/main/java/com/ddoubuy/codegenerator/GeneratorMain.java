@@ -14,10 +14,10 @@ import java.util.function.Consumer;
  * @date: 2022-04-16-0016
  */
 public class GeneratorMain {
-    private static final String DB_URL = "数据库连接地址";
-    private static final String DB_USER_NAME = "账号";
-    private static final String DB_USER_PASSWORD = "密码";
-    private static final String OUT_PATH = "E:\\inc\\架构\\springcloud\\gitdemo\\mybatis-gencode-test";
+    private static final String DB_URL = "jdbc:mysql://139.224.205.200:3306/ddoubuy?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8";
+    private static final String DB_USER_NAME = "root";
+    private static final String DB_USER_PASSWORD = "gxw255613";
+    private static final String OUT_PATH = "E:\\inc\\架构\\springcloud\\gitdemo\\mybatis-test";
     private static final String PACKAGE = "com.ddoubuy";
     private static final String AUTH = "boykaff";
     // 定义Mapper和xml生成的基包的子路径
@@ -29,6 +29,7 @@ public class GeneratorMain {
     public static void main(String[] args) {
         genUserServiceCode();
         genCartServiceCode();
+        genProductServiceCode();
         genOrderServiceCode();
     }
 
@@ -43,21 +44,10 @@ public class GeneratorMain {
     }
 
     /**
-     * 购物车相关服务表对应的代码生成配置
+     * 商品相关服务表对应的代码生成配置
      */
-    private static void genCartServiceCode() {
-        String model = "cart";
-        doGenerator(model, (builder) -> {
-            builder.addInclude("cms_cart") // 设置需要生成的表名
-                    .addTablePrefix("cms_"); // 设置过滤表前缀
-        });
-    }
-
-    /**
-     * 订单相关服务表对应的代码生成配置
-     */
-    private static void genOrderServiceCode() {
-        String model = "order";
+    private static void genProductServiceCode() {
+        String model = "product";
         doGenerator(model, (builder) -> {
             builder.addInclude("pms_brand," +
                             "pms_product," +
@@ -68,6 +58,30 @@ public class GeneratorMain {
                             "pms_sku_attr_key," +
                             "pms_sku_attr_value") // 设置需要生成的表名
                     .addTablePrefix("pms_"); // 设置过滤表前缀
+        });
+    }
+
+    /**
+     * 购物车相关服务表对应的代码生成配置
+     */
+    private static void genCartServiceCode() {
+        String model = "cart";
+        doGenerator(model, (builder) -> {
+            builder.addInclude("cms_cart") // 设置需要生成的表名
+                    .addTablePrefix("cms_"); // 设置过滤表前缀
+        });
+    }
+
+
+    /**
+     * 订单相关服务表对应的代码生成配置
+     */
+    private static void genOrderServiceCode() {
+        String model = "order";
+        doGenerator(model, (builder) -> {
+            builder.addInclude("oms_order," +
+                            "oms_order_item") // 设置需要生成的表名
+                    .addTablePrefix("oms_"); // 设置过滤表前缀
         });
     }
 

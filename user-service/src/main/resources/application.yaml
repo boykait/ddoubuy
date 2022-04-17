@@ -1,5 +1,5 @@
 server:
-  port: 8004
+  port: 8001
 
 spring:
   profiles:
@@ -12,3 +12,8 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher  #处理api文档兼容问题：https://blog.csdn.net/weixin_39792935/article/details/122215625?spm=1001.2014.3001.5501
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+

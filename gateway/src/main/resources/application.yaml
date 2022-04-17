@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  name: ddoubuy-gateway
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher  #处理api文档兼容问题：https://blog.csdn.net/weixin_39792935/article/details/122215625?spm=1001.2014.3001.5501
+
+
