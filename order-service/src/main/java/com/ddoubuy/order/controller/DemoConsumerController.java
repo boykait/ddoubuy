@@ -1,10 +1,10 @@
 package com.ddoubuy.order.controller;
 
-import com.ddoubuy.order.consumer.DemoRpcClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
 
 /**
  * @description:
@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2022-04-11-0011
  */
 @RestController
-@RequestMapping("/consumer/")
+@RequestMapping("/api/order/demo/")
 public class DemoConsumerController {
-    @Autowired
-    private DemoRpcClient demoRpcClient;
-
     @GetMapping("/get")
     public Object get() {
-        return demoRpcClient.getById(1);
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("code", 200);
+        return result;
     }
 }

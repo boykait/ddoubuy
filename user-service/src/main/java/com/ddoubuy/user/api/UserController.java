@@ -3,6 +3,7 @@ package com.ddoubuy.user.api;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ddoubuy.common.model.Result;
+import com.ddoubuy.common.utils.JsonUtils;
 import com.ddoubuy.user.orm.mybatis.po.User;
 import com.ddoubuy.user.service.IUserService;
 import io.swagger.annotations.Api;
@@ -30,6 +31,7 @@ public class UserController {
     public Result<User> listUser10() {
         IPage<User> pageQuery = new Page<>(1, 10);
         IPage pageResult = userService.page(pageQuery);
+        JsonUtils.toJsonString(pageResult);
         return Result.success(pageResult);
     }
 }

@@ -29,9 +29,9 @@ public class JsonUtils {
     }
 
     static {
-//        if (null == objectMapper) {
-//            objectMapper = new ObjectMapper();
-//        }
+        if (null == objectMapper) {
+            objectMapper = new ObjectMapper();
+        }
     }
 
 

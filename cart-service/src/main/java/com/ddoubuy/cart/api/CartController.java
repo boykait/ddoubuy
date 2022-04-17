@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
  * @since 2022-04-16
  */
 @Controller
-@RequestMapping("/cart/cart")
+@RequestMapping("/api/cart/")
 public class CartController {
 
 }
