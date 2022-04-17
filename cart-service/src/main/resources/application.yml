@@ -4,3 +4,11 @@ server:
 spring:
   profiles:
     active: dev
+  datasource:
+    username: ddoubuyer
+    password: zaq12wsxcde34rfv
+    url: jdbc:mysql://139.224.205.200:3306/ddoubuy?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher  #处理api文档兼容问题：https://blog.csdn.net/weixin_39792935/article/details/122215625?spm=1001.2014.3001.5501

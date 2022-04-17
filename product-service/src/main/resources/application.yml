@@ -5,8 +5,8 @@ spring:
   profiles:
     active: dev
   datasource:
-    username: root
-    password: gxw255613
+    username: ddoubuyer
+    password: zaq12wsxcde34rfv
     url: jdbc:mysql://139.224.205.200:3306/ddoubuy?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
