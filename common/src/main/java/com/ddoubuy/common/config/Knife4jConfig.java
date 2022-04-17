@@ -24,12 +24,12 @@ public class Knife4jConfig {
     public Docket defaultApi2() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .description("# swagger-bootstrap-ui-demo RESTful APIs")
-                        .contact(new Contact("宫兴伟", "", "gxw255613@126.com"))
+                        .description("ddoubuy接口文档")
+                        .contact(new Contact("宫兴伟", "https://github.com/boykait", "gxw255613@126.com"))
                         .version("1.0")
                         .build())
                 //分组名称
-                .groupName("2.X版本")
+                .groupName("1.0")
                 .select()
                 //这里指定Controller扫描包路径
                 .apis(RequestHandlerSelectors.basePackage("com.ddoubuy"))

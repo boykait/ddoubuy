@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author boykaff
  * @since 2022-04-16
  */
-@Api(tags = "用户API服务模块")
+@Api(tags = "用户-api服务")
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
